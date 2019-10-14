@@ -29,6 +29,20 @@ function buttonClick() {
     request.send();
 }
 
+function displayError(message) {
+    var source = document.getElementById("error-template").innerHTML;
+    var template = Handlebars.compile(source);
+
+    let context =
+    {
+        message : message
+    };
+    var html = template(context);
+
+    document.getElementById("error-container").innerHTML = html;
+    document.getElementById("weather-container").innerHTML = "";
+}
+
 
 function displayWeather(forecast) {
     var source = document.getElementById("weather-template").innerHTML;
