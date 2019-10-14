@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <script type="text/javascript" src="handlebars.min.js"></script>
+</head>
+
+<body>
+
+    <div class="input-container">
+        <h1 id="input-label">City name: </h1>
+        <form onsubmit="buttonClick(); return false;">
+            <input id="input" type="text">
+            <input id="input-button" type="submit" value="Show">
+        </form>
+    </div>
+
+    <div id="error-container"></div>
+    <script id="error-template" type="text/x-handlebars-template">
+        <h1 class="error-message">Error: {{message}}</h1>
+    </script>
+
+    <div id="weather-container"></div>
+    <script id="weather-template" type="text/x-handlebars-template">
+        <div class="weather-parameters">
+        {{#each parameters}}
+            <div class="parameter">
+                <div class="parameter-name">{{name}}</div>
+                <div class="parameter-value">{{value}} {{{units}}}</div>
+            </div>
+        {{/each}}
+        </div>
+    </script>
+
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
