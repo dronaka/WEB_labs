@@ -1,0 +1,21 @@
+.weather-parameters {
+    margin-top: 30px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.parameter-name {
+    font-weight: bold;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#input-label {
+    margin: 0;
+}
