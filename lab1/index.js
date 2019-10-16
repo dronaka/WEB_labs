@@ -1,8 +1,11 @@
-"use strict"
+
+document.getElementById("form-submit").addEventListener('submit', buttonClick)
 
 
-function buttonClick() {
-    let cityName = document.getElementById("input").value;
+function buttonClick(event) {
+    event.preventDefault()
+    cityName = event.currentTarget[0].value
+    
 
     let request = new XMLHttpRequest();
 
@@ -16,8 +19,7 @@ function buttonClick() {
 
     request.onload = function () {
         if (request.status == 200) {
-            let cityName = request.response.name;
-            updateTab("Weather in " + cityName);           
+       
             let data = extractForecast(request.response);
             displayWeather(data);
         }
@@ -53,11 +55,6 @@ function displayWeather(forecast) {
     document.getElementById("weather-container").innerHTML = html;
 }
 
-
-function updateTab(newTitle) {
-    document.title = newTitle;
-
-}
 
 function extractForecast(response) {
     let forecast =
