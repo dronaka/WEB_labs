@@ -1,11 +1,11 @@
 
-document.getElementById("form-submit").addEventListener('submit', buttonClick)
+document.getElementById("form-submit").addEventListener('submit', onSubmit)
 
 
-function buttonClick(event) {
-    event.preventDefault()
-    cityName = event.currentTarget[0].value
-    
+function onSubmit(event) {
+    event.preventDefault();
+    let cityName = event.currentTarget[0].value;
+
 
     let request = new XMLHttpRequest();
 
@@ -35,10 +35,7 @@ function displayError(message) {
     var source = document.getElementById("error-template").innerHTML;
     var template = Handlebars.compile(source);
 
-    let context =
-    {
-        message : message
-    };
+    let context ={ message };
     var html = template(context);
 
     document.getElementById("error-container").innerHTML = html;
