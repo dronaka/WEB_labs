@@ -4,13 +4,13 @@ import { connect } from "react-redux";
 import CityForm from "./CityForm"
 import City from "./City";
 import { addСity, deleteСity, fetchWeatherByCityName } from "../actions";
-
+import "./styles/WeatherParam.css";
 
 
 class Сities extends React.Component {
   render() {
     return (
-      <div className="Сities">
+      <div className="cities">
         <h1>Сities</h1>
         <CityForm onSubmit={(e) => this.handleCityForm(e)} />
         {this.props.error && <div className="error">Error: {this.props.error}</div>}

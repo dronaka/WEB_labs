@@ -3,7 +3,8 @@ import React from "react";
 
 import WeatherParam from "./WeatherParam";
 
-import Loader from "./Loader"
+import Loader from "./Loader";
+import "./styles/City.css";
 
 
 
@@ -45,7 +46,7 @@ export default class City extends React.Component {
     } = this.props;
 
     return (
-      <div className="City">
+      <div className="city">
         <div className="header">
           <div className="city-name">{cityName}</div>
           <div className="temperature">{temperature} &#8451;</div>

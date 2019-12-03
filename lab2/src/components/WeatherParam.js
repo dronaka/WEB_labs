@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./styles/WeatherParam.css";
 
 
 export default function WeatherParam(props) {
