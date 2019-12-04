@@ -1,0 +1,13 @@
+.geolocation {
+    display: flexbox;
+    justify-content: space-around;
+  }
+  
+  .geolocation > .header {
+    display: inline-block;
+  }
+  
+  .geolocation > .button {
+    margin-left: 60px;
+    height: 3em;
+  }

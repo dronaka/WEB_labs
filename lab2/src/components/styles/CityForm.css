@@ -1,0 +1,7 @@
+.add-city {
+    display: inline;
+  }
+  
+  .add-city > .input {
+    display: inline;
+  }
