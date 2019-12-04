@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 
 import CityForm from "./CityForm"
 import City from "./City";
-import { addСity, deleteСity, fetchWeatherByCityName } from "../actions";
-import "./styles/WeatherParam.css";
+import { addСity, deleteСity, fetchWeatherByCityName } from "../actions/cityActions";
+import "./styles/Cities.css";
+
 
 
 class Сities extends React.Component {
@@ -42,8 +43,8 @@ class Сities extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    cities: state.cities,
-    error: state.error
+    cities: state.cities.cities,
+    error: state.cities.error
   };
 }
 

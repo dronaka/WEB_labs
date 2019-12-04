@@ -1,5 +1,5 @@
 import React from "react";
-
+import { getIconURL } from "../WeatherApi"
 
 import WeatherParam from "./WeatherParam";
 
@@ -33,6 +33,7 @@ export default class City extends React.Component {
       forecast: {
         cityName,
         temperature,
+        icon,
         windSpeed,
         description,
         pressure,
@@ -50,6 +51,7 @@ export default class City extends React.Component {
         <div className="header">
           <div className="city-name">{cityName}</div>
           <div className="temperature">{temperature} &#8451;</div>
+          <img src={getIconURL(icon)} alt="Weather icon" />
         </div>
 
         <WeatherParam name="Wind" value={`${windSpeed} m/s`} />
