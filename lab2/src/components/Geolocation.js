@@ -65,17 +65,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setGeolocation: (coords) => {
-      dispatch(setGeolocation(coords));
-    },
+    setGeolocation: (coords) => {dispatch(setGeolocation(coords));},
 
-    fetchWeatherByCoords: (coords) => {
-      dispatch(fetchWeatherByCoords(coords));
-    },
+    fetchWeatherByCoords: (coords) => {dispatch(fetchWeatherByCoords(coords));},
 
-    fetchGeoError: (error) => {
-      dispatch(fetchGeoError(error));
-    }
+    fetchGeoError: (error) => {dispatch(fetchGeoError(error));}
   };
 }
 

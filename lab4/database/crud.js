@@ -6,7 +6,6 @@ const AddCity = async (cityname) => {
             if (!err) {
                 console.log(`Added city_name = ${cityname}`)
             }
-
             resolve(!err);
         });
     });
@@ -18,7 +17,6 @@ const DeleteCity = async (cityname) => {
             if (!err) {
                 console.log(`Removed city_name = ${cityname}`)
             }
-
             resolve(!err);
         });
     });

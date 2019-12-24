@@ -1,14 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import CityForm from "./CityForm"
+import CityForm from "./CityForm";
 import City from "./City";
-import { addСity, deleteСity, fetchWeatherByCityName } from "../actions/cityActions";
+import { addCity, fetchWeatherByCityName, getCities, deleteCity } from "../actions/cityActions";
 import "./styles/Cities.css";
 
 
 
 class Сities extends React.Component {
+  componentDidMount() {
+    console.log("FIRST")
+    this.props.getCities();
+  }
+
   render() {
     return (
       <div className="cities">
@@ -18,7 +23,6 @@ class Сities extends React.Component {
         <div className="forecasts">
           {
             [...this.props.cities.entries()].map((entry) => {
-              console.log(entry[0])
               return (
                 <City
                   key={entry[0]}
@@ -36,7 +40,7 @@ class Сities extends React.Component {
   handleCityForm(e) {
     e.preventDefault();
     const cityName = e.currentTarget.elements.cityName.value;
-    this.props.addСity(cityName);
+    this.props.addCity(cityName);
   }
 }
 
@@ -50,17 +54,13 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addСity: (cityName) => {
-      dispatch(addСity(cityName));
-    },
+    getCities: () => {dispatch(getCities())},
 
-    deleteСity: (cityName) => {
-      dispatch(deleteСity(cityName)); 
-    },
+    addCity: (cityName) => {dispatch(addCity(cityName));},
 
-    fetchWeatherByCityName: (cityName) => {
-      dispatch(fetchWeatherByCityName(cityName));
-    }
+    deleteСity: (cityName) => {dispatch(deleteCity(cityName)); },
+
+    fetchWeatherByCityName: (cityName) => {dispatch(fetchWeatherByCityName(cityName));}
   };
 }
 

@@ -10,10 +10,9 @@ import "./styles/City.css";
 
 
 export default class City extends React.Component {
+  
   componentDidMount() {
-    let forecast = this.props.onFetch();
-    console.log("tyt")
-    console.log(forecast)
+    this.props.onFetch();
   }
 
   render() {

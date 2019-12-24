@@ -5,25 +5,25 @@ const router = express.Router();
 
 
 router.post('/', (req, res) => {
-    const city_name = req.body.cityname;
+    const cityName = req.body.cityName;
 
-    favouritesCRUD.AddCity(city_name).then((result) => {
+    favouritesCRUD.AddCity(cityName).then((result) => {
         if (!result) {
-            res.status(400).json({"message": `Did not add city ${city_name}`});
+            res.status(400).json({"message": `Did not add city ${cityName}`});
         } else {
-            res.status(200).end();
+            res.status(200).json({"message" : "Ok"});
         }
     });
 });
 
 
 router.delete('/', (req, res) => {
-    const city_name = req.body.cityname;
-    favouritesCRUD.DeleteCity(city_name).then((result) => {
+    const cityName = req.body.cityName;
+    favouritesCRUD.DeleteCity(cityName).then((result) => {
         if (!result) {
-            res.status(400).json({"message": `Did not delete city ${city_name}`});
+            res.status(400).json({"message": `Did not delete city ${cityName}`});
         } else {
-            res.status(200).end()
+            res.status(200).json({"message" : "Ok"})
         }
     });
 });

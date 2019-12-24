@@ -1,34 +1,21 @@
+const API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+const API_BASE_PARAMETERS = "&appid=7825ce4ffa896c5019e53087c858568a&units=metric&lang=en";
 
 document.getElementById("form-submit").addEventListener('submit', onSubmit)
 
 
-function onSubmit(event) {
-    event.preventDefault();
-    let cityName = event.currentTarget[0].value;
+async function onSubmit(e) {
+    e.preventDefault();
 
-
-    let request = new XMLHttpRequest();
-
-    let requestText = "https://api.openweathermap.org/data/2.5/weather" +
-        "?q=" + cityName +
-        "&appid=7825ce4ffa896c5019e53087c858568a" +
-        "&units=metric";
-
-    request.open("GET", requestText);
-    request.responseType = "json";
-
-    request.onload = function () {
-        if (request.status == 200) {
-       
-            let data = extractForecast(request.response);
-            displayWeather(data);
-        }
-        else {
-            displayError(request.response.message);
-        }
+    const inputCityName = e.currentTarget.elements.input.value;
+    try {
+        const weatherResponse = await getWeather(inputCityName);
+        const forecast = extractForecast(weatherResponse);
+        displayWeather(forecast);
+    } catch (error) {
+        error.cityName = inputCityName;
+        displayError(error);
     }
-
-    request.send();
 }
 
 function displayError(message) {
@@ -52,6 +39,16 @@ function displayWeather(forecast) {
     document.getElementById("weather-container").innerHTML = html;
 }
 
+async function getWeather(cityName) {
+    const url = `${API_BASE_URL}?q=${cityName}${API_BASE_PARAMETERS}`;
+    
+    const weatherResponse = await fetch(url);
+    const weatherJSON = await weatherResponse.json();
+    if (!weatherResponse.ok)
+        throw Error(weatherJSON.message);
+
+    return weatherJSON;
+}
 
 function extractForecast(response) {
     let forecast =

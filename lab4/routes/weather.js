@@ -6,9 +6,9 @@ const { fetchWeatherByCityName, fetchWeatherByCoords } = require("../utils/Weath
 
 router.get("/", async (req, res) => {
   try {
-    const city = req.query.city;
+    const cityName = req.query.cityName;
     console.log(req.query)
-    const forecast = await fetchWeatherByCityName(city);
+    const forecast = await fetchWeatherByCityName(cityName);
     res.status(200).json(forecast);
   } catch (error) {
     res.status(400).json({ message: error.message });

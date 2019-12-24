@@ -1,4 +1,4 @@
-export const API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+export const API_BASE_URL = "http://localhost:8001";
 export const API_BASE_PARAMETERS = "&appid=7825ce4ffa896c5019e53087c858568a&units=metric&lang=en"
 const API_ICON_URL = "https://openweathermap.org/img/wn/";
 

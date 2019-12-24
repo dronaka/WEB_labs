@@ -1,16 +1,36 @@
 
+
+const API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+const API_BASE_PARAMETERS = "&appid=7825ce4ffa896c5019e53087c858568a&units=metric&lang=en";
+
+sinon = require("sinon");
+
+chai = require("chai");
+
+functions = require("../functions")
+
+
+var assert = chai.assert;
+var getWeather = functions.getWeather
+var extractForecast = functions.extractForecast
+
+
+
+
+
+
 describe("index.js", function() {
     
     describe("extractForecast", function() {
 
         const JSON = {
             "coord": {
-                "lon": 46.47,
-                "lat": 41.53
+                "lon": 41.54,
+                "lat": 46.48
             },
             "weather": [
                 {
-                    "id": 801,
+                    "id": 804,
                     "main": "Clouds",
                     "description": "few clouds",
                     "icon": "02n"
@@ -41,20 +61,20 @@ describe("index.js", function() {
                 "sunset": 1573307090
             },
             "timezone": 10800,
-            "id": 473249,
+            "id": 499161,
             "name": "Salsk",
             "cod": 200
         };
 
 
-        it("forecast содержит свойства 'parameters'", function() {
+        it("forecast should contains array 'parametrs'", function() {
             const forecast = extractForecast(JSON);
 
             assert.property(forecast, "parameters");
             assert.isArray(forecast.parameters);
         });
 
-        it("список 'parameters' содержит 5 элементов", function() {
+        it("forecast's array 'parameters' should contain 5 elements", function() {
             let parametersLength = 5;
 
             const forecast = extractForecast(JSON);
@@ -62,7 +82,7 @@ describe("index.js", function() {
             assert.lengthOf(forecast.parameters, parametersLength);
         });
 
-        it("каждый элемент из 'parameters' содержит поля: 'name', 'value', 'units'", function() {
+        it("each forecast's parameter should contains fields: 'name', 'value', 'units'", function() {
             const forecast = extractForecast(JSON);
             
             forecast.parameters.forEach(parameter => {
@@ -72,7 +92,7 @@ describe("index.js", function() {
             });
         });
 
-        it("json парсится в forecast", function() {
+        it("json shoud be parsed to forecast", function() {
             
             let expectedForecast = {
                 parameters:
@@ -112,6 +132,79 @@ describe("index.js", function() {
 
     });
 
-    describe("getForecast")
+    describe("getWeather", () => {
+
+        before(() => {
+            global.fetch = () => null;
+        });
+        
+        after(() => {
+            delete global.fetch;
+        });
+
+        let stubbedFetch = sinon.stub();
+        
+        beforeEach(() => {
+            stubbedFetch = sinon.stub(global, "fetch");
+            stubbedFetch
+                .resolves({
+                    ok: true,
+                    json: () => Promise.resolve("default json content")
+                });
+        });
+
+        afterEach(() => {
+            stubbedFetch.restore();
+        });
+
+        it("should call fetch once", async () => {
+            await getWeather("cityName");
+
+            sinon.assert.calledOnce(stubbedFetch);
+        });
+        
+        it("should call fetch and return resolved promise", async () => {
+            const expectedJsonContent = "fake json data";
+            stubbedFetch
+                .resolves({
+                    ok: true,
+                    json: () => Promise.resolve(expectedJsonContent)
+                });
+
+            const response = await getWeather("cityName");
+            
+            assert.equal(expectedJsonContent, response);
+        });
+
+        it("should call fetch with url with cityName", async () => {
+            const API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+            const API_BASE_PARAMETERS = "&appid=7825ce4ffa896c5019e53087c858568a&units=metric&lang=en";
+            const cityName = "testCityName";
+            const expectedUrl = `${API_BASE_URL}?q=${cityName}${API_BASE_PARAMETERS}`;
+            await getWeather(cityName);
+
+            stubbedFetch.calledWithExactly(expectedUrl);
+        });
+
+        it("should call fetch and return not found error in json()", async () => {
+            const expectedErrorMessage = "fake not found message";
+            stubbedFetch
+                .resolves({
+                    ok: false,
+                    json: () => Promise.resolve({
+                        message: expectedErrorMessage
+                    })
+                });
+
+            try {
+                await getWeather("cityName");
+                assert.isTrue(false, "Error wasn't thrown")
+            } catch (error) {
+                assert.typeOf(error, "Error");
+                assert.equal(error.message, expectedErrorMessage);
+            }
+        });
+
+    });
 
 });
