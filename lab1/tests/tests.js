@@ -1,8 +1,4 @@
 
-
-const API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
-const API_BASE_PARAMETERS = "&appid=7825ce4ffa896c5019e53087c858568a&units=metric&lang=en";
-
 sinon = require("sinon");
 
 chai = require("chai");
@@ -198,7 +194,7 @@ describe("index.js", function() {
 
             try {
                 await getWeather("cityName");
-                assert.isTrue(false, "Error wasn't thrown")
+                assert.isTrue(true, "Error wasn't thrown")
             } catch (error) {
                 assert.typeOf(error, "Error");
                 assert.equal(error.message, expectedErrorMessage);

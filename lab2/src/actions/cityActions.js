@@ -102,11 +102,13 @@ export function addCity(cityName) {
     try {
       const response = await fetch(API_URL, fetchOptions);
       const json = await response.json();
-      
+      console.log(response);
       if (response.ok)
         dispatch(addCitySuccess(cityName, json.forecast));
-      else
+      else{
+        console.log(json.message)
         dispatch(addCityError(cityName, json.message));
+      }
     } catch (error) {
       dispatch(addCityError(cityName, error.message));
     }

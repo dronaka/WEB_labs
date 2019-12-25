@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_BASE_PARAMETERS } from "../WeatherApi";
+import { API_BASE_URL } from "../WeatherApi";
 
 export const Actions = {
   SET_GEOLOCATION: "SET_GEOLOCATION",

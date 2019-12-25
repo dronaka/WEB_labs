@@ -22,7 +22,6 @@ export default function Reducer(state = initialState, action) {
     
     case Actions.ADD_CITY_SUCCESS:
       state.error = false;
-      updateCity(state, action.payload.cityName, action.payload.apiResponse);
       break;
     
     case Actions.ADD_CITY_ERROR:
