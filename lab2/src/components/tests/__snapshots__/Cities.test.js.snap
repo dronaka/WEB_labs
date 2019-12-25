@@ -1,0 +1,600 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cities /> render should has cities with 1 element 1`] = `
+<div
+  className="cities"
+>
+  <h1>
+    Сities
+  </h1>
+  <form
+    class="add-city"
+    onSubmit={[Function]}
+  >
+    <input
+      class="input"
+      name="cityName"
+      placeholder="City name"
+      required={true}
+      type="text"
+    />
+    <input
+      class="button"
+      type="submit"
+      value="Add to city"
+    />
+  </form>
+  <div
+    className="forecasts"
+  >
+    <div
+      className="city"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="city-name"
+        >
+          New York
+        </div>
+        <div
+          className="temperature"
+        >
+          -22
+           ℃
+        </div>
+        <img
+          alt="Weather icon"
+          src="https://openweathermap.org/img/wn/icon_code.png"
+        />
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Wind
+        </div>
+        <div
+          className="value"
+        >
+          15 m/s
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Cloudness
+        </div>
+        <div
+          className="value"
+        >
+          good to stay at home
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Pressure
+        </div>
+        <div
+          className="value"
+        >
+          234 hPa
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Humidity
+        </div>
+        <div
+          className="value"
+        >
+          1%
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Coords
+        </div>
+        <div
+          className="value"
+        >
+          74, 89
+        </div>
+      </div>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        delete
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cities /> render should has cities with 1 loading element 1`] = `
+<div
+  className="cities"
+>
+  <h1>
+    Сities
+  </h1>
+  <form
+    class="add-city"
+    onSubmit={[Function]}
+  >
+    <input
+      class="input"
+      name="cityName"
+      placeholder="City name"
+      required={true}
+      type="text"
+    />
+    <input
+      class="button"
+      type="submit"
+      value="Add to city"
+    />
+  </form>
+  <div
+    className="forecasts"
+  >
+    <div
+      className="loader"
+    >
+      <p>
+        Forecast is loading...
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cities /> render should has cities with 2 element 1`] = `
+<div
+  className="cities"
+>
+  <h1>
+    Сities
+  </h1>
+  <form
+    class="add-city"
+    onSubmit={[Function]}
+  >
+    <input
+      class="input"
+      name="cityName"
+      placeholder="City name"
+      required={true}
+      type="text"
+    />
+    <input
+      class="button"
+      type="submit"
+      value="Add to city"
+    />
+  </form>
+  <div
+    className="forecasts"
+  >
+    <div
+      className="city"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="city-name"
+        >
+          New York
+        </div>
+        <div
+          className="temperature"
+        >
+          -22
+           ℃
+        </div>
+        <img
+          alt="Weather icon"
+          src="https://openweathermap.org/img/wn/icon_code.png"
+        />
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Wind
+        </div>
+        <div
+          className="value"
+        >
+          15 m/s
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Cloudness
+        </div>
+        <div
+          className="value"
+        >
+          good to stay at home
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Pressure
+        </div>
+        <div
+          className="value"
+        >
+          234 hPa
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Humidity
+        </div>
+        <div
+          className="value"
+        >
+          1%
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Coords
+        </div>
+        <div
+          className="value"
+        >
+          74, 89
+        </div>
+      </div>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        delete
+      </button>
+    </div>
+    <div
+      className="city"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="city-name"
+        >
+          New York
+        </div>
+        <div
+          className="temperature"
+        >
+          -22
+           ℃
+        </div>
+        <img
+          alt="Weather icon"
+          src="https://openweathermap.org/img/wn/icon_code.png"
+        />
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Wind
+        </div>
+        <div
+          className="value"
+        >
+          15 m/s
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Cloudness
+        </div>
+        <div
+          className="value"
+        >
+          good to stay at home
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Pressure
+        </div>
+        <div
+          className="value"
+        >
+          234 hPa
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Humidity
+        </div>
+        <div
+          className="value"
+        >
+          1%
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Coords
+        </div>
+        <div
+          className="value"
+        >
+          74, 89
+        </div>
+      </div>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        delete
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cities /> render should has empty cities 1`] = `
+<div
+  className="cities"
+>
+  <h1>
+    Сities
+  </h1>
+  <form
+    class="add-city"
+    onSubmit={[Function]}
+  >
+    <input
+      class="input"
+      name="cityName"
+      placeholder="City name"
+      required={true}
+      type="text"
+    />
+    <input
+      class="button"
+      type="submit"
+      value="Add to city"
+    />
+  </form>
+  <div
+    className="forecasts"
+  />
+</div>
+`;
+
+exports[`<Cities /> render should has error and cities with 1 element 1`] = `
+<div
+  className="cities"
+>
+  <h1>
+    Сities
+  </h1>
+  <form
+    class="add-city"
+    onSubmit={[Function]}
+  >
+    <input
+      class="input"
+      name="cityName"
+      placeholder="City name"
+      required={true}
+      type="text"
+    />
+    <input
+      class="button"
+      type="submit"
+      value="Add to city"
+    />
+  </form>
+  <div
+    className="error"
+  >
+    Error: 
+    test error message
+  </div>
+  <div
+    className="forecasts"
+  >
+    <div
+      className="city"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="city-name"
+        >
+          New York
+        </div>
+        <div
+          className="temperature"
+        >
+          -22
+           ℃
+        </div>
+        <img
+          alt="Weather icon"
+          src="https://openweathermap.org/img/wn/icon_code.png"
+        />
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Wind
+        </div>
+        <div
+          className="value"
+        >
+          15 m/s
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Cloudness
+        </div>
+        <div
+          className="value"
+        >
+          good to stay at home
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Pressure
+        </div>
+        <div
+          className="value"
+        >
+          234 hPa
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Humidity
+        </div>
+        <div
+          className="value"
+        >
+          1%
+        </div>
+      </div>
+      <div
+        className="param"
+      >
+        <div
+          className="name"
+        >
+          Coords
+        </div>
+        <div
+          className="value"
+        >
+          74, 89
+        </div>
+      </div>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        delete
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Cities /> render should has error and empty cities 1`] = `
+<div
+  className="cities"
+>
+  <h1>
+    Сities
+  </h1>
+  <form
+    class="add-city"
+    onSubmit={[Function]}
+  >
+    <input
+      class="input"
+      name="cityName"
+      placeholder="City name"
+      required={true}
+      type="text"
+    />
+    <input
+      class="button"
+      type="submit"
+      value="Add to city"
+    />
+  </form>
+  <div
+    className="error"
+  >
+    Error: 
+    test error message
+  </div>
+  <div
+    className="forecasts"
+  />
+</div>
+`;

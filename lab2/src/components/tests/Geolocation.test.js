@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 
-import Geolocation from "./Geolocation";
+import Geolocation from "../Geolocation";
 
 
 describe("<Geolocation /> render", () => {

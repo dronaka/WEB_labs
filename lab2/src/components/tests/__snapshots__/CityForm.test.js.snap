@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CityForm /> render should has form with text input and button 1`] = `
+<form
+  class="add-city"
+  onSubmit={[Function]}
+>
+  <input
+    class="input"
+    name="cityName"
+    placeholder="City name"
+    required={true}
+    type="text"
+  />
+  <input
+    class="button"
+    type="submit"
+    value="Add to city"
+  />
+</form>
+`;
