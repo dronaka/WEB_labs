@@ -10,7 +10,7 @@
     "axios-rate-limit": "^1.2.1",
     "cors": "^2.8.5",
     "express": "~4.16.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "sqlite3": "^4.1.0"
   }
 }
